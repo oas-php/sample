@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "movie": {
+            "$ref": "\/\/oas-php.github.io\/sample\/library\/openapi.json#components\/schemas\/Movie"
+        },
+        "time": {
+            "type": "string",
+            "format": "datetime"
+        },
+        "hall": {
+            "type": "string"
+        }
+    }
+}

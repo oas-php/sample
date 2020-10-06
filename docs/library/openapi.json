@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Movie Library",
+        "license": {
+            "name": "MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "http:\/\/oas-php.github.io"
+        }
+    ],
+    "paths": {
+        "\/movies": {
+            "get": {
+                "summary": "List all movies",
+                "operationId": "listMovies",
+                "tags": [
+                    "movies"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Paged collection of movies",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/Movie"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "\/movies\/{movieId}": {
+            "parameters": [
+                {
+                    "name": "movieId",
+                    "in": "path",
+                    "description": "Unique movie id",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Info for a given movie",
+                "operationId": "getMovie",
+                "tags": [
+                    "movies"
+                ],
+                "parameters": [
+                    {
+                        "name": "movieId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the movie to retrieve",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expected response to a valid request",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/Movie"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Actor": {
+                "$ref": ".\/components\/schemas\/actor.json"
+            },
+            "Director": {
+                "$ref": ".\/components\/schemas\/director.json"
+            },
+            "Movie": {
+                "$ref": ".\/components\/schemas\/movie.json"
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "allOf": [
+        {
+            "$ref": ".\/person.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "directed": {
+                    "type": "array",
+                    "items": {
+                        "$ref": ".\/movie.json"
+                    }
+                }
+            }
+        }
+    ]
+}

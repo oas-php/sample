@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "genre": {
+            "type": "string"
+        },
+        "year": {
+            "type": "integer"
+        },
+        "director": {
+            "$ref": ".\/director.json"
+        },
+        "actors": {
+            "type": "array",
+            "items": {
+                "$ref": ".\/actor.json"
+            }
+        }
+    },
+    "example": {
+        "title": "The Shining",
+        "year": 1980,
+        "director": {
+            "firstName": "Stanley",
+            "lastName": "Kubrick",
+            "yearOfBirth": 1928
+        },
+        "actors": [
+            {
+                "firstName": "Jack",
+                "lastName": "Nicholson",
+                "yearOfBirth": 1937
+            },
+            {
+                "firstName": "Shelley",
+                "lastName": "Duvall",
+                "yearOfBirth": 1949
+            }
+        ]
+    }
+}

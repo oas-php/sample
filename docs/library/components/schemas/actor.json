@@ -1,0 +1,18 @@
+{
+    "allOf": [
+        {
+            "$ref": ".\/person.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "actedId": {
+                    "type": "array",
+                    "items": {
+                        "$ref": ".\/movie.json"
+                    }
+                }
+            }
+        }
+    ]
+}

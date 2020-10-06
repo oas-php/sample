@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Movie Theater",
+        "license": {
+            "name": "MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "https:\/\/oas-php.github.io\/sample\/openapi.json"
+        }
+    ],
+    "paths": {
+        "\/shows": {
+            "get": {
+                "summary": "Cinema's repertoire",
+                "operationId": "shows",
+                "responses": {
+                    "200": {
+                        "description": "Expected response to a valid request",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#components\/schemas\/Show"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Show": {
+                "$ref": "components\/schemas\/show.json"
+            }
+        }
+    }
+}
