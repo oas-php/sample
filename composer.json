@@ -1,0 +1,12 @@
+{
+  "name": "oas-php/sample",
+  "description": "Sample Schema",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kuba Biernacki",
+      "email": "kubiernacki@gmail.com"
+    }
+  ]
+}
